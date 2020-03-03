@@ -55,3 +55,23 @@ china.__namecall =
         return name(City, ...)
     end
 )
+pmpl = 25
+pmlp = 16
+KeyHeld = false
+	function onKeyPress(inputObject,gameProcessed)
+	    if inputObject.KeyCode == Enum.KeyCode.LeftShift then
+	        KeyHeld = true
+	        while KeyHeld do
+	            game.Workspace[game.Players.LocalPlayer.Name].Humanoid.WalkSpeed = pmpl
+	            wait()
+		  end
+	 end
+end 
+function onKeyRelease(inputObject,gameProcessed)
+	   if inputObject.KeyCode == Enum.KeyCode.LeftShift then
+       KeyHeld = false
+	   game.Workspace[game.Players.LocalPlayer.Name].Humanoid.WalkSpeed = pmlp
+    end
+end 
+game:GetService("UserInputService").InputBegan:connect(onKeyPress)
+game:GetService("UserInputService").InputEnded:connect(onKeyRelease)
