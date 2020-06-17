@@ -62,7 +62,7 @@ KeyHeld = false
 	    if inputObject.KeyCode == Enum.KeyCode.LeftShift then
 	        KeyHeld = true
 	        while KeyHeld do
-	            game.Workspace[game.Players.LocalPlayer.Name].Humanoid.WalkSpeed = pmpl
+	            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = pmpl
 	            wait()
 		  end
 	 end
@@ -70,7 +70,7 @@ end
 function onKeyRelease(inputObject,gameProcessed)
 	   if inputObject.KeyCode == Enum.KeyCode.LeftShift then
        KeyHeld = false
-	   game.Workspace[game.Players.LocalPlayer.Name].Humanoid.WalkSpeed = pmlp
+	   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = pmlp
     end
 end 
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
